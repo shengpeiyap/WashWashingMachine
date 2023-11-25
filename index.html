@@ -1,50 +1,131 @@
+<!DOCTYPE html>
 <html>
-<head><title>** Wash Washing Machine **</title>
-<link rel="icon" href="icon.ico" type="image/x-icon"/>
-<p>hello,here is my page</p>
-</head>
-<style>
-  *{
-  box-sizing: border-box;
-  }
-body {
-      background: Aquamarine; /* warna latar */
-	  font-family: Times New Roman;
-	  padding: 10px;
-	  }
-#header {
-         padding: 10px;
-		 text-align: center;
-		 color; Gold; /* warna tajuk */
-		 background: MediumSpringGreen; /* warna header */
-		 }
-h1 {
-    font-size: 50px;
-	font-weight: bold;
-	color: white;
-	}
-h2 {
-    font-weight: bold;
-	font-style: italic;
-	color: white;
-	}
-iframe {
-	text-align: center;
-}
-</style>
-<body>
+<head>
+    <meta charset="utf-8">
+    <title>sportify 下载器</title>
+    <style>
+        /* 定义一些样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
 
-<div id='header'>
-<h1>Wash Washing Machine</h1>
-<!--- motto --->
-<p><h2>Kami Bantu Anda Pilih Mesin Basuh Terbaik</h2></p>
-</div>
-<tr>
-<td></td>
-<td></td>
-<td><iframe width="600" height="350" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=blZUB1LQQy5_PI7e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
-<td></td>
-<td></td>
-</tr>
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            width: 300px;
+            height: 30px;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            border: none;
+            background-color: #0099ff;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0099ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>sportify 下载器</h1>
+    <form id="search-form">
+        <input type="text" id="search-input" placeholder="搜索音乐或 sportify 网址">
+    </form>
+    <button id="delete-button">删除</button>
+    <button id="download-button">下载音档</button>
+    <nav id="nav">
+        <!-- 导航栏的链接 -->
+        <a href="#">简易 sportify 下载器终端</a>
+    </nav>
+
+    <!-- 引入 jQuery 库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 编写 JavaScript 代码 -->
+    <script>
+        // 获取元素对象
+        var searchInput = document.getElementById("search-input");
+        var deleteButton = document.getElementById("delete-button");
+        var downloadButton = document.getElementById("download-button");
+        var nav = document.getElementById("nav");
+
+        // 定义一个函数，用于搜索音乐或 sportify 网址
+        function search() {
+            // 获取输入框的值
+            var query = searchInput.value;
+
+            // 如果输入框为空，弹出提示框
+            if (query == "") {
+                alert("请输入要搜索的内容");
+                return false; // 返回 false 表示取消操作
+            }
+
+            // 如果输入框不为空，发送请求到 sportify API
+            $.ajax({
+                url: "https://api.spotify.com/v1/search?q=" + query + "&type=track", // 指定请求的 URL 和参数
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("access_token") // 使用本地存储中的 access_token 访问 Spotify API
+                },
+                success: function(data) {
+                    // 如果请求成功，获取返回的数据
+                    var tracks = data.tracks;
+
+                    // 如果返回的数据不为空，遍历每个音乐信息
+                    if (tracks != null && tracks.length > 0) {
+                        for (var i = 0; i < tracks.length; i++) {
+                            // 获取每个音乐信息的链接和名称
+                            var trackUrl = tracks[i].url; // 音乐链接
+                            var trackName = tracks[i].name; // 音乐名称
+
+                            // 创建一个新的 a 标签，用于显示音乐名称和链接
+                            var aTag = document.createElement("a");
+                            aTag.textContent = trackName + " (" + trackUrl + ")";
+                            aTag.href = trackUrl; // 设置 a 标签的 href 属性为音乐链接
+
+                            // 将 a 标签添加到导航栏中
+                            nav.appendChild(aTag);
+                        }
+                    } else {
+                        alert("未找到相关音乐");
+                    }
+                },
+                error: function() {
+                    alert("请求失败，请检查网络连接或授权状态");
+                }
+            });
+        }
+
+        // 绑定按钮点击事件
+        deleteButton.addEventListener("click", function() {
+            // 实现删除功能
+            // ...
+        });
+
+        downloadButton.addEventListener("click", function() {
+            // 实现下载音乐功能
+            // ...
+        });
+    </script>
 </body>
 </html>
