@@ -29,15 +29,30 @@
       width :100%;
       }
   }
+  .nav-link {
+  }
+  .current {
+  }
 </style>
 <body>
 
 <ul>
-  <li><a href="/spotify-downloader.github.io/index.html">首页</a></li>
+  <li><a href="/spotify-downloader.github.io/index.html" class="nav-link current">首页</a></li>
   <li><a href="https://www.spotify.com/" target="_blank">Spotify官网</a></li>
   <li style="float:right">
     <a href="">下载</a></li>
 </ul>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var currentUrl = window.loaction.href;
+    var navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(function (link) {
+      var linkUrl = link.getAttribute('href');
+      if (currentUrl.indexOf(linkUrl) !== -1) {
+        link.classList.add('current');
+      }
+    });
+  });
+</script>
 </body>
 </html>
