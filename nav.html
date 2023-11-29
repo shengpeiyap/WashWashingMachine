@@ -65,20 +65,22 @@
       <a href="">下载</a></li>
   </ul>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var currentUrl = window.location.href; /* 修正此处的拼写错误 */
-      var navLinks = document.querySelectorAll('.nav-link');
-      navLinks.forEach(function (link) {
-        var linkUrl = link.getAttribute('href');
-        if (currentUrl.indexOf(linkUrl) !== -1) {
-          link.classList.add('current');
-          link.style.position = 'relative'; /* 设置相对定位，使下面的绝对定位生效 */
-          link.innerHTML += '<div class="underline"></div>'; /* 添加长方条的div */
-          link.querySelector('.underline').style.width = link.offsetWidth + 'px';
-        }
-      });
+  document.addEventListener('DOMContentLoaded', function () {
+    var currentUrl = window.location.href;
+    var navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(function (link) {
+      var linkUrl = link.getAttribute('href');
+      if (currentUrl.indexOf(linkUrl) !== -1) {
+        link.classList.add('current');
+        link.setAttribute('disabled', 'true'); // 添加禁用属性
+        link.style.cursor = 'not-allowed'; // 更改鼠标样式为not-allowed
+        link.innerHTML += '<div class="underline"></div>';
+        link.querySelector('.underline').style.width = link.offsetWidth + 'px';
+      }
     });
-  </script>
+  });
+</script>
+
 </body>
 
 </html>
