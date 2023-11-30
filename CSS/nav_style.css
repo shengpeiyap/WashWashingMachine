@@ -33,7 +33,7 @@ header {
 .navbar {
   width: 100%;
   height: 60px;
-  max-widh: 1200px；
+  max-widh: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@ header {
 }
 
 .action_btn {
-  background-color: white;
+  background-color: pink;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
