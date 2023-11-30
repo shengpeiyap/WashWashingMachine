@@ -127,3 +127,10 @@ header {
     display: block;
   }
 }
+
+@media (max-width: 576px) {
+  .dropdown_menu {
+    left: 2rem;
+    width: unset;
+  }
+}
