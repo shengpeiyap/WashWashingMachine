@@ -58,7 +58,7 @@ header {
 }
 
 .action_btn {
-  background-color: pink;
+  background-color: linear-gradient(to top, PaleGreen, Blue);
   color: white;
   padding: 0.5rem 1rem;
   border: none;
