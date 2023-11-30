@@ -4,82 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #FFC0CB;
-    }
-
-    li {
-      float: left;
-    }
-
-    li a {
-      display: inline-block;
-      font-family: Trebuchet MS;
-      color: black; /* 修正此处的拼写错误 */
-      text-align: center;
-      padding: 10px 16px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    li a:hover {
-      background-color: #FC6C85;
-      color: white; /* 修正此处的拼写错误 */
-    }
-
-    @media screen and (max-width: 400px) {
-      .nav a {
-        float: none;
-        width: 100%;
-      }
-    }
-
-    .nav-link {
-      position: relative; /* 添加相对定位，使下面的绝对定位生效 */
-    }
-
-    .current::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      background-color: #007BFF;
-      width: 100%; /* 设置长方条的宽度为100% */
-      transition: width 0.3s ease; /* 添加过渡效果 */
-    }
-  </style>
 </head>
 
 <body>
 
   <ul>
-    <li><a href="/spotify-downloader.github.io/index.html" class="nav-link current">首页</a></li>
     <li><a href="https://www.spotify.com/" target="_blank">Spotify官网</a></li>
     <li style="float:right">
       <a href="">下载</a></li>
   </ul>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var currentUrl = window.location.href;
-    var navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(function (link) {
-      var linkUrl = link.getAttribute('href');
-      if (currentUrl === linkUrl) { // 使用===进行严格匹配
-        link.classList.add('current');
-        link.setAttribute('disabled', 'true');
-        link.style.cursor = 'not-allowed';
-        link.innerHTML += '<div class="underline"></div>';
-        link.querySelector('.underline').style.width = link.offsetWidth + 'px';
-      }
-    });
-  });
-</script>
 </body>
 
 </html>
