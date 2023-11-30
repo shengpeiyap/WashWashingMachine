@@ -1,0 +1,33 @@
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #FFC0CB;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: inline-block;
+      font-family: Trebuchet MS;
+      color: black; /* 修正此处的拼写错误 */
+      text-align: center;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    li a:hover {
+      background-color: #FC6C85;
+      color: white; /* 修正此处的拼写错误 */
+    }
+
+    @media screen and (max-width: 400px) {
+      .nav a {
+        float: none;
+        width: 100%;
+      }
+    }
