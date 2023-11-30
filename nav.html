@@ -19,9 +19,18 @@
       <i class="fa-solid fa-bars"></i>
     </div>
   </div>
-    <div class="dropdown_menu open">
+    <div class="dropdown_menu">
       <li><a href="https://www.spotify.com" target="_blank">Spotify官网</a></li>
     </div>
   </header>
-</body>
+  <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+    }
+  </script>
+ </body>
 </html>
