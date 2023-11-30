@@ -7,7 +7,7 @@ font-family: 'Open Sans', 'sans-serif';
 
 body {
   height: 100vh;
-  background-color: Black;
+  background-color: Pink;
   background-size: cover;
   background-position: center;
 }
@@ -58,7 +58,7 @@ header {
 }
 
 .action_btn {
-  background-color: pink;
+  background-color: white;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
