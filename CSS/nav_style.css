@@ -67,6 +67,7 @@ header {
   font-size: 0.8rem;
   font-weight: bold;
   cursor: pointer;
+  transition: scale .2 ease;
 }
 
 .action_btn:hover {
