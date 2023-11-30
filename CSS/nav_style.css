@@ -59,7 +59,7 @@ header {
 
 .action_btn {
   background: #98FB98;
-  background: linear-gradient(to top, #CFFDBC, #98FB98);
+  background: linear-gradient(to top, #98FB98, #CFFDBC);
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -74,10 +74,42 @@ header {
 .action_btn:hover {
   scale: 1.05;
   color: white;
+  background: #CFFDBC;
+  background: linear-gradient(to top, #CFFDBC, #98FB98);
 }
 
 .action_btn:active {
   scale: 0.95;
+}
+
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  with: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-fillter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dropdown_menu.open {
+  height: 240px;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 992px) {
@@ -87,6 +119,10 @@ header {
   }
   
   .navbar .toggle_btn {
+    display: block;
+  }
+
+  .dropdown_menu {
     display: block;
   }
 }
