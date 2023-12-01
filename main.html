@@ -21,46 +21,18 @@
     </style>
 </head>
 <body>
-    
-    <input type="text" id="searchInput" placeholder="Enter song or artist">
-    <button id="searchButton" onclick="search()">Search</button>
-
-    <div id="results"></div>
-
-    <script>
-        function search() {
-            // Get user input
-            var userInput = document.getElementById("searchInput").value;
-
-            // Perform search (you'll replace this with your actual search logic)
-            var searchResults = performSearch(userInput);
-
-            // Display results (you'll replace this with your actual display logic)
-            displayResults(searchResults);
-        }
-
-        function performSearch(query) {
-            // This is where you'll make API requests to Spotify or your backend
-            // Return search results or handle asynchronously
-            // Replace this with your actual logic
-            return [
-                { title: "Song 1", artist: "Artist 1" },
-                { title: "Song 2", artist: "Artist 2" },
-                // Add more results as needed
-            ];
-        }
-
-        function displayResults(results) {
-            var resultsContainer = document.getElementById("results");
-            resultsContainer.innerHTML = ""; // Clear previous results
-
-            // Display each result
-            results.forEach(function(result) {
-                var resultElement = document.createElement("div");
-                resultElement.innerHTML = "<strong>" + result.title + "</strong> by " + result.artist;
-                resultsContainer.appendChild(resultElement);
-            });
-        }
-    </script>
+        <div id="cover">
+                <form method="get" action="">
+                        <div class="tb">
+                                <div class="td"><input type="text" placeholder="Search" required></div>
+                                <div class="td" id="s_cover">
+                                        <button type="submit">
+                                                <div id="s-circle"></div>
+                                                <span></span>
+                                        </button>
+                                </div>
+                        </div>
+                </form>
+        </div>
 </body>
 </html>
