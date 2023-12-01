@@ -19,7 +19,7 @@ body {
 
 .td {
   display: table-cell;
-  virtical-align: middle;
+  vertical-align: middle;
 }
 
 input,
@@ -141,7 +141,7 @@ button span:after {
   transform: rotateZ(-52deg);
 }
 
-#s-cover:hover button span:before，
+#s-cover:hover button span:before,
 #s-cover:hover button span:after {
   right: -6px;
   width: 40px;
