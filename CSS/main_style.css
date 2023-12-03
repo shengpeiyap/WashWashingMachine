@@ -37,12 +37,12 @@ button {
   top: 50%;
   left: 0;
   right: 0;
-  width: 550px;
-  padding: 35px;
+  width: 1200px;
+  padding: 20px;
   margin: -83px auto 0 auto;
-  background-color: #FF7575;
+  background-color: rgb(31, 226, 119);
   border-radius: 20px;
-  box-shadow: 0 10px 40px #FF7C7C, 0 0 0 20px #FFFFFFEB;
+  box-shadow: 0 10px 40px #7cffc8, 0 0 0 20px #FFFFFFEB;
   transform: scale(0.6);
 }
 
@@ -57,9 +57,10 @@ input[type="text"] {
   line-height: 1;
 }
 
- input[type="text"]::placeholder {
-   color: #E16868;
+input[type="text"]::placeholder {
+   color: rgb(2, 145, 97);
  }
+
 #s-cover {
   width: 1px;
   padding-left: 35px;
@@ -75,8 +76,8 @@ button {
 
 #s-circle {
   position: relative;
-  top: -8px;
-  left: 0;
+  top: -2px;
+  left: 8;
   width: 43px;
   height: 43px;
   margin-top: 0;
@@ -89,8 +90,8 @@ button {
 
 button span {
   position: absolute;
-  top: 68px;
-  left: 43px;
+  top: 74px;
+  left: 51px;
   display: block;
   width: 45px;
   height: 15px;
