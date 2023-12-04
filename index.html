@@ -7,8 +7,8 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>Spotify下载器</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="CSS/nav_style.css">
-  <link rel="stylesheet" href="CSS/leftbox_menu_style.css">
+  <link id="style-link" rel="stylesheet" href="CSS/lightmode_style.css">
+  <link id="darkmode-style-link" rel="stylesheet" href="CSS/darkmode/darkmode_style.css">
 </head>
 <body>
   <header>
@@ -34,7 +34,7 @@
       <div class="container">
         <div class="darkmode_text">黑暗模式</div>
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" id="switch">
             <span class="slider"></span>
         </label>
         </div>
@@ -52,31 +52,6 @@
   </header>
   <iframe src="main.html" frameborder="0" width="100%" height="300px"></iframe>
   
-  <script>
-    const toggleBtn = document.querySelector('.toggle_btn')
-    const toggleBtnIcon = document.querySelector('.toggle_btn i')
-    const dropDownMenu = document.querySelector('.dropdown_menu')
-
-    toggleBtn.onclick = function () {
-      dropDownMenu.classList.toggle('open')
-      const isOpen = dropDownMenu.classList.contains('open')
-
-      toggleBtnIcon.classList = isOpen
-       ? 'fa-solid fa-xmark'
-       : 'fa-solid fa-bars'
-    }
-    function menuShow() {
-            let item = document.getElementById("left_menu");
-            if(item.style.left==="0px") {
-                item.style.left="-10em"
-                item.style.opacity="0"
-            }else{
-                item.style.left="0px"
-                item.style.opacity="1"
-            }
-        }
-        let closeBtn = document.querySelector(".close");
-closeBtn.addEventListener("click", menuShow);
-  </script>
+  <script src="script.js"></script>
  </body>
 </html>
